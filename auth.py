@@ -8,6 +8,7 @@ from flask_jwt_extended import create_access_token
 # Blueprint for authentication routes
 auth = Blueprint('auth', __name__)
 
+
 @auth.route('/register', methods=['POST'])
 def register():
     """User registration route"""
@@ -22,6 +23,7 @@ def register():
     db.session.add(new_user)
     db.session.commit()
     return jsonify({"msg": "User created successfully"}), 201
+
 
 @auth.route('/login', methods=['POST'])
 def login():
