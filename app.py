@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
 
+
 # Initialize the Flask application
 app = Flask(__name__)
 
@@ -18,11 +19,12 @@ db = SQLAlchemy(app)
 # Initialize JWT
 jwt = JWTManager(app)
 
+
 @app.route('/')
 def home():
     """Home route for the application"""
     return 'Hello, Quiz App!'
 
+
 if __name__ == '__main__':
     app.run(debug=True)
-
